@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>welcome back to coding</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+          <input type="text" id="name" placeholder="Full name">
+          <input type="text" id="phone" placeholder="Phone">
+          <label>Female</label>
+          <input type="radio" id="female" onchange="getGender()" name="gender" value="f" placeholder="Phone">
+          <label>Male</label>
+          <input type="radio" id="male" onchange="getGender()"  name="gender" value="m" placeholder="Phone">
+          <input type="text" id="age" placeholder="Age">
+          <button onclick="submitForm()">Submit</button>
+        </div>
+        <div id="students">
+          <h3>List of students</h3>
+          <div class="students">
+          </div>
+    <!--      Display list of students -->
+        </div>
+      </div>
+    
+    <!-- // Get students information -->
+   <script> 
+    let name = ''
+    let phone = ''
+    let gender = ''
+    let age = ''
+    let students = []
+
+    function submitForm() {
+      name = document.getElementById('name').value
+      phone = document.getElementById('phone').value
+      // age = document.getElementById('age').value
+      
+      // <!-- // Check if all fields are filled -->
+      let r= age = document.getElementById('age').value
+      if(isNaN(r)){
+        return alert('input a number')
+      }
+
+      if (name && phone && gender && age) {
+        let student = {
+          name: name,
+          phone: phone,
+          gender: gender,
+          age: age,
+        }
+        // <!-- // Enter a student's record in the list -->
+
+       students.push(student)
+        let div = `<div>`
+      //  <!-- // Display all students -->
+
+        students.forEach(function (student) {
+          div += `
+              <p>${student.name}</p>
+              <p>${student.phone}</p>
+              <p>${student.gender}</p>
+              <p>${student.age}</p>`
+        })
+        
+         div += '</div>'
+        document.querySelector('.students').innerHTML = div
+        
+        // clears the field
+        clearInput()
+
+        // <!-- // this code here will run when the condition is met. -->
+      } else {
+        alert('condition not met')
+      }
+    }
+
+    function getGender() {
+      if (document.getElementById('female').checked) {
+        gender = document.getElementById('female').value;
+      } else if(document.getElementById('male').checked) {
+        gender = document.getElementById('male').value;
+      }
+
+    
+    }
+   function clearInput(){
+     document.getElementById('name').value=''
+     document.getElementById('phone').value=''
+     document.getElementById('male').checked=''
+     document.getElementById('female').checked=''
+     document.getElementById('age').value=''
+   }
+   
+</script>
+
+
+
+
+
+
+
+
+  <!-- <h2>March 5 2021</h2> 
+  <p>to open console: cmd+option+c To comment on my code I click cmd+k+c and to uncomment, I click cmd+k,cmd+u. </p>
+    
+    <script>
+        let a= 4; 
+        let b= 7;
+        let c= 4 + 7; 
+
+        console.log(c)
+// collect users input by ther names
+let name= prompt('Enter your name')
+alert('Good morning ' + name )
+
+    </script> -->
+</body>
+</html>

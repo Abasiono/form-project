@@ -5,18 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    <title>welcome back to coding</title>
+    <title>Welcome back to coding</title>
 </head>
 <body>
     <div class="container">
         <div class="form">
           <input type="text" id="name" placeholder="Full name">
           <input type="text" id="phone" placeholder="Phone">
+          <input type="text" id="age" placeholder="Age">
           <label>Female</label>
           <input type="radio" id="female" onchange="getGender()" name="gender" value="f" placeholder="Phone">
           <label>Male</label>
           <input type="radio" id="male" onchange="getGender()"  name="gender" value="m" placeholder="Phone">
-          <input type="text" id="age" placeholder="Age">
+
           <button onclick="submitForm()">Submit</button>
         </div>
         <div id="students">
@@ -41,8 +42,8 @@
       // age = document.getElementById('age').value
       
       // <!-- // Check if all fields are filled -->
-      let r= age = document.getElementById('age').value
-      if(isNaN(r)){
+       age = document.getElementById('age').value
+      if(isNaN(age)){
         return alert('input a number')
       }
 
@@ -85,15 +86,14 @@
       } else if(document.getElementById('male').checked) {
         gender = document.getElementById('male').value;
       }
-
-    
     }
+
    function clearInput(){
-     document.getElementById('name').value=''
-     document.getElementById('phone').value=''
-     document.getElementById('male').checked=''
-     document.getElementById('female').checked=''
-     document.getElementById('age').value=''
+     document.getElementById('name').value = ''
+     document.getElementById('phone').value = ''
+     document.getElementById('male').checked = ''
+     document.getElementById('female').checked = ''
+     document.getElementById('age').value = ''
    }
    
 </script>

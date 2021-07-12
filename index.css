@@ -7,7 +7,7 @@
     grid-template-columns: 1fr 1fr;
     justify-content: center;
   }
-  #male, #female, #name, #phone {
+  #male, #female, #name, #phone, #age {
     display: block;
     margin-bottom: 20px;
   }
